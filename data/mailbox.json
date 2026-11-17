@@ -1,0 +1,530 @@
+{
+  "charter": {
+    "clientName": "Elena Vance",
+    "clientTitle": "Chief Executive Officer",
+    "assistantName": "Marcus Chen",
+    "spendLimitUsd": 5000,
+    "preferredTone": "Executive Crisp",
+    "schedulingWindow": "Tue–Thu, 10:00 AM–4:30 PM PT (30 min slots preferred)",
+    "autoHandleRules": [
+      "Confirm flights, hotels, and conference logistics within $2,500 travel budget",
+      "Decline unsolicited vendor cold outreach and generic podcast pitches politely",
+      "Escalate any legal MSA redline, board commitment, or spend above $5,000",
+      "Require client approval before confirming 1-on-1 investor dinners or press interviews"
+    ]
+  },
+  "threads": [
+    {
+      "id": "thread-mwjc9ecw",
+      "subject": "Changes to Executive Hotel Reservation",
+      "participantName": "Olivia Brown",
+      "participantEmail": "olivia.brown@luxurytravels.com",
+      "participantOrg": "Luxury Travels International",
+      "category": "Scheduling & Travel",
+      "priority": "High",
+      "responsibility": "waiting_external",
+      "responsibilityReason": "The new hotel cost $3,200 exceeds the $2,500 travel budget, requiring Elena's approval per delegation rules.",
+      "aiSummary": "Olivia Brown informs that the original hotel is unavailable and proposes a replacement at $3,200. The assistant must obtain Elena's decision on the higher‑cost booking before confirming.",
+      "extractedActionItems": [
+        "Review the proposed $3,200 hotel change and decide whether to accept",
+        "If approved, instruct Olivia to proceed with the reservation",
+        "Communicate the decision to Olivia promptly (ideally within the next business day)"
+      ],
+      "messages": [
+        {
+          "id": "msg-mwjc9ecw",
+          "senderName": "Olivia Brown",
+          "senderEmail": "olivia.brown@luxurytravels.com",
+          "senderRole": "external",
+          "timestamp": "2026-11-16T14:08:16.112Z",
+          "body": "Hello Marcus,\n\nI am writing to inform you that the hotel reservation for Elena's upcoming business trip needs to be changed.\n\nDue to unexpected maintenance, the originally booked hotel is unavailable for the requested dates.\n\nWe can offer an alternative five-star hotel with similar facilities. The updated booking cost will be $3,200 instead of the original $2,700.\n\nPlease check whether the new arrangement is acceptable and confirm if we should proceed with the booking.\n\nWe apologize for the inconvenience and look forward to your response.\n\nBest regards,\nOlivia Brown\nSenior Travel Coordinator\nLuxury Travels International"
+        },
+        {
+          "id": "msg-mwjcalgw",
+          "senderName": "Marcus Chen (on behalf of Elena Vance)",
+          "senderEmail": "marcus@meridianhq.com",
+          "senderRole": "assistant",
+          "timestamp": "2026-11-16T14:09:11.984Z",
+          "body": "Olivia,\n\nThank you for the update. The proposed alternative hotel at $3,200 exceeds our $2,500 travel budget for accommodations. Please provide a comparable five‑star option that meets the original budget ceiling, or confirm that the original reservation can be reinstated once the maintenance issue is resolved.\n\nWe appreciate your prompt attention to this matter.\n\nBest,\nMarcus Chen  \nPersonal Assistant to Elena Vance, CEO"
+        },
+        {
+          "id": "msg-mwjcbgv1",
+          "senderName": "Elena Vance",
+          "senderEmail": "elena@meridianhq.com",
+          "senderRole": "client",
+          "timestamp": "2026-11-16T14:09:52.669Z",
+          "body": "Olivia,\n\nThank you for the prompt update.\n\nThe $3,200 rate exceeds our $2,500 accommodation budget. Please either:\n\n1. Identify a comparable five‑star property at or below $2,500 total for the requested dates, including all taxes and fees; or  \n2. Confirm that the original hotel can be reinstated once maintenance is resolved, with the original $2,700 rate adjusted to meet our budget ceiling.\n\nWe need a revised proposal by close of business tomorrow to finalize travel arrangements.\n\nBest regards,  \nElena Vance  \nChief Executive Officer  \n\ncc: Marcus Chen, Personal Assistant"
+        }
+      ],
+      "internalNotes": [
+        {
+          "id": "note-mwjca0za",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-16T14:08:45.430Z",
+          "content": "good have a nice day!"
+        },
+        {
+          "id": "note-mwjcalgw",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-16T14:09:11.984Z",
+          "content": "Sent reply on client’s behalf."
+        },
+        {
+          "id": "note-mwjcbaho",
+          "authorRole": "client",
+          "authorName": "Elena Vance",
+          "timestamp": "2026-11-16T14:09:44.412Z",
+          "content": "ok"
+        },
+        {
+          "id": "note-mwjcbgv1",
+          "authorRole": "client",
+          "authorName": "Elena Vance",
+          "timestamp": "2026-11-16T14:09:52.669Z",
+          "content": "Approved and sent reply to external recipient."
+        }
+      ],
+      "draftReply": "",
+      "draftTone": "Executive Crisp",
+      "lastUpdatedAt": "2026-11-16T14:09:52.675Z",
+      "unread": false
+    },
+    {
+      "id": "thread-mwhtab7r",
+      "subject": "Request for Business Partnership Meeting",
+      "participantName": "Sarah Johnson",
+      "participantEmail": "sarah.johnson@techvision.com",
+      "participantOrg": "TechVision Solutions",
+      "category": "Deals & Partners",
+      "priority": "High",
+      "responsibility": "waiting_external",
+      "responsibilityReason": "Assistant can schedule and send the Zoom calendar invite per delegation rules without client involvement.",
+      "aiSummary": "Sarah Johnson requested a partnership meeting; Elena approved a 30‑minute Zoom slot on Tue Nov 20 10:00‑10:30 PT. The assistant now needs to create and send the calendar invitation.",
+      "extractedActionItems": [
+        "Send a Zoom calendar invitation for Tue Nov 20, 10:00‑10:30 AM PT to Sarah Johnson",
+        "Include dial‑in details and meeting agenda in the invite",
+        "Confirm receipt of the invitation with Sarah"
+      ],
+      "messages": [
+        {
+          "id": "msg-mwhtab7r",
+          "senderName": "Sarah Johnson",
+          "senderEmail": "sarah.johnson@techvision.com",
+          "senderRole": "external",
+          "timestamp": "2026-11-15T12:29:19.815Z",
+          "body": "Hello Elena,\n\nI hope you are doing well.\n\nWe are interested in discussing a potential business partnership between TechVision Solutions and your organization.\n\nWe would like to schedule a meeting next week to discuss the project proposal, partnership opportunities, and future business plans.\n\nCould you please share your available dates and preferred meeting times?\n\nLooking forward to hearing from you.\n\nBest regards,\nSarah Johnson\nBusiness Development Manager\nTechVision Solutions"
+        },
+        {
+          "id": "msg-mwhtaqot",
+          "senderName": "Marcus Chen (on behalf of Elena Vance)",
+          "senderEmail": "marcus@meridianhq.com",
+          "senderRole": "assistant",
+          "timestamp": "2026-11-15T12:29:39.869Z",
+          "body": "Sarah,\n\nThank you for reaching out. I’m available for a 30‑minute discussion next week during the following windows (PT):\n\n- Tuesday, Nov 20: 10:00 AM – 11:30 AM or 2:00 PM – 3:30 PM  \n- Wednesday, Nov 21: 11:00 AM – 12:30 PM or 3:00 PM – 4:30 PM  \n- Thursday, Nov 22: 10:00 AM – 11:30 AM or 1:30 PM – 3:00 PM  \n\nPlease let me know which slot works best, and whether you prefer a Zoom call or an in‑person meeting at our headquarters. I’ll have my team send a calendar invite and the appropriate dial‑in details.\n\nBest,  \nElena Vance  \nChief Executive Officer  \n\ncc: Marcus Chen (Personal Assistant)"
+        },
+        {
+          "id": "msg-mwhtbbfe",
+          "senderName": "Elena Vance",
+          "senderEmail": "elena@meridianhq.com",
+          "senderRole": "client",
+          "timestamp": "2026-11-15T12:30:06.746Z",
+          "body": "Sarah,\n\nThank you for your flexibility. Let’s meet on Tuesday, Nov 20, 10:00 – 10:30 AM PT via Zoom. I’ll have Marcus send a calendar invitation with the dial‑in details shortly.\n\nLooking forward to our discussion.\n\nBest regards,  \nElena Vance  \nChief Executive Officer  \n\ncc: Marcus Chen (Personal Assistant)"
+        },
+        {
+          "id": "msg-mwjc4n7j",
+          "senderName": "Marcus Chen (on behalf of Elena Vance)",
+          "senderEmail": "marcus@meridianhq.com",
+          "senderRole": "assistant",
+          "timestamp": "2026-11-16T14:04:34.303Z",
+          "body": "Sarah,\n\nYour meeting is confirmed for Tuesday, Nov 20, 10:00 – 10:30 AM PT via Zoom. Please join using the link below:\n\n[Zoom Meeting Link]  \nMeeting ID: [ID] Passcode: [Passcode]\n\nIf you have any briefing materials you’d like us to review, please forward them by Monday.\n\nBest regards,  \nMarcus Chen  \nPersonal Assistant to Elena Vance  \ncc: Elena Vance (CEO)"
+        },
+        {
+          "id": "msg-mwjc5i48",
+          "senderName": "Elena Vance",
+          "senderEmail": "elena@meridianhq.com",
+          "senderRole": "client",
+          "timestamp": "2026-11-16T14:05:14.360Z",
+          "body": "Sarah,\n\nThank you for confirming the Zoom meeting on Tuesday, Nov 20, 10:00 – 10:30 AM PT.\n\nPlease forward any briefing materials you’d like us to review by Monday, Nov 19, so we can allocate time for preparation. If there are particular agenda items or questions you’d like addressed, kindly outline them in your reply.\n\nThe meeting link remains:\n\n[Zoom Meeting Link]  \nMeeting ID: [ID] Passcode: [Passcode]\n\nLooking forward to our discussion.\n\nBest regards,  \nElena Vance  \nChief Executive Officer  \n\ncc: Marcus Chen (Personal Assistant)"
+        }
+      ],
+      "internalNotes": [
+        {
+          "id": "note-mwhtaqot",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-15T12:29:39.869Z",
+          "content": "Sent reply on client’s behalf."
+        },
+        {
+          "id": "note-mwhtbbfe",
+          "authorRole": "client",
+          "authorName": "Elena Vance",
+          "timestamp": "2026-11-15T12:30:06.746Z",
+          "content": "Approved and sent reply to external recipient."
+        },
+        {
+          "id": "note-mwjbtjtc",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-16T13:55:56.688Z",
+          "content": "good and nice"
+        },
+        {
+          "id": "note-mwjbtsb1",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-16T13:56:07.693Z",
+          "content": "good"
+        },
+        {
+          "id": "note-mwjc2mb9",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-16T14:02:59.829Z",
+          "content": "good and nice to see u"
+        },
+        {
+          "id": "note-mwjc4n7j",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-16T14:04:34.303Z",
+          "content": "Sent reply on client’s behalf."
+        },
+        {
+          "id": "note-mwjc5i48",
+          "authorRole": "client",
+          "authorName": "Elena Vance",
+          "timestamp": "2026-11-16T14:05:14.360Z",
+          "content": "Approved and sent reply to external recipient."
+        }
+      ],
+      "draftReply": "",
+      "draftTone": "Executive Crisp",
+      "lastUpdatedAt": "2026-11-16T14:05:14.364Z",
+      "unread": false
+    },
+    {
+      "id": "thread-podcast-pitch",
+      "subject": "Invitation: \"Founders Unfiltered\" Podcast Guest Appearance",
+      "participantName": "Liam O’Connor",
+      "participantEmail": "liam@foundersunfiltered.fm",
+      "participantOrg": "Founders Unfiltered Media",
+      "category": "Operations",
+      "priority": "Low",
+      "responsibility": "waiting_external",
+      "responsibilityReason": "Awaiting initial triage against client delegation rules.",
+      "aiSummary": "Untriaged media/podcast pitch asking for a 60-minute remote interview in December.",
+      "extractedActionItems": [
+        "Evaluate alignment with Q4 comms priorities"
+      ],
+      "messages": [
+        {
+          "id": "m-pod-1",
+          "senderName": "Liam O’Connor",
+          "senderEmail": "liam@foundersunfiltered.fm",
+          "senderRole": "external",
+          "timestamp": "2026-11-14T18:50:00.000Z",
+          "body": "Hey Elena,\n\nBig fan of what you’re building at Meridian! Would love to have you on our weekly podcast (around 4,500 listeners) for a 60-minute video recording sometime in early December. Let me know if you’re open to it!"
+        },
+        {
+          "id": "msg-mwht226y",
+          "senderName": "Marcus Chen (on behalf of Elena Vance)",
+          "senderEmail": "marcus@meridianhq.com",
+          "senderRole": "assistant",
+          "timestamp": "2026-11-15T12:22:54.874Z",
+          "body": "give me more information"
+        },
+        {
+          "id": "msg-mwht2qmv",
+          "senderName": "Marcus Chen (on behalf of Elena Vance)",
+          "senderEmail": "marcus@meridianhq.com",
+          "senderRole": "assistant",
+          "timestamp": "2026-11-15T12:23:26.551Z",
+          "body": "Liam,\n\nThank you for thinking of Meridian for “Founders Unfiltered.” Elena’s calendar is fully committed through December, and we are not adding new podcast appearances at this time. Consequently, we must decline the invitation.\n\nShould you have a formal media kit, detailed audience demographics, and a clear agenda for future opportunities, feel free to forward them. We’ll keep the information on file for potential consideration when scheduling permits.\n\nBest regards,  \nMarcus Chen  \nPersonal Assistant to Elena Vance  \nMeridian HQ"
+        },
+        {
+          "id": "msg-mwht5ate",
+          "senderName": "Elena Vance",
+          "senderEmail": "elena@meridianhq.com",
+          "senderRole": "client",
+          "timestamp": "2026-11-15T12:25:26.018Z",
+          "body": "Hi Liam,\n\nThank you for the invitation. Elena’s calendar is fully booked through December, and we are not adding any new podcast appearances at this time, so we must decline.\n\nPlease forward a formal media kit, audience demographics, and a detailed agenda. We’ll retain the information for future consideration when scheduling permits.\n\nBest regards,  \nMarcus Chen  \nPersonal Assistant to Elena Vance  \nMeridian HQ"
+        },
+        {
+          "id": "msg-mwjaytzz",
+          "senderName": "Elena Vance",
+          "senderEmail": "elena@meridianhq.com",
+          "senderRole": "client",
+          "timestamp": "2026-11-16T13:32:03.551Z",
+          "body": "Liam,\n\nAs mentioned, Elena’s schedule is fully booked through December, so we cannot add a podcast appearance at this time. Please forward the formal media kit, audience demographics, and a detailed agenda so we can retain the information for future consideration.\n\nThank you."
+        },
+        {
+          "id": "msg-mwjbpagz",
+          "senderName": "Marcus Chen (on behalf of Elena Vance)",
+          "senderEmail": "marcus@meridianhq.com",
+          "senderRole": "assistant",
+          "timestamp": "2026-11-16T13:52:37.955Z",
+          "body": "Liam O’Connor  \nFounders Unfiltered Media  \n\nElena,\n\nThank you for the clarification. I’ve attached the following for your records:\n\n1. **Media Kit** – branding assets, host bios, and episode format.  \n2. **Audience Demographics** – listener breakdown by industry, seniority, and geography.  \n3. **Proposed Episode Agenda** – suggested topics, segment timing, and potential guest angles.\n\nWe understand your calendar is fully booked through December and will hold off on any scheduling attempts until you indicate availability. Please let us know if you need any additional details.\n\nBest regards,  \nLiam O’Connor  \nFounders Unfiltered  \nliam@foundersunfiltered.fm  \n[Attachments: Media_Kit.pdf, Audience_Demographics.pdf, Episode_Agenda.pdf]"
+        }
+      ],
+      "internalNotes": [
+        {
+          "id": "note-mwht226y",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-15T12:22:54.874Z",
+          "content": "Sent reply on client’s behalf."
+        },
+        {
+          "id": "note-mwht2qmv",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-15T12:23:26.551Z",
+          "content": "Sent reply on client’s behalf."
+        },
+        {
+          "id": "note-mwht5ate",
+          "authorRole": "client",
+          "authorName": "Elena Vance",
+          "timestamp": "2026-11-15T12:25:26.018Z",
+          "content": "Approved and sent reply to external recipient."
+        },
+        {
+          "id": "note-mwjaytzz",
+          "authorRole": "client",
+          "authorName": "Elena Vance",
+          "timestamp": "2026-11-16T13:32:03.551Z",
+          "content": "Approved and sent reply to external recipient."
+        },
+        {
+          "id": "note-mwjbpagz",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-16T13:52:37.955Z",
+          "content": "Sent reply on client’s behalf."
+        }
+      ],
+      "draftReply": "",
+      "draftTone": "Direct Decline",
+      "lastUpdatedAt": "2026-11-16T13:52:37.958Z",
+      "unread": false
+    },
+    {
+      "id": "thread-acme-msa",
+      "subject": "Re: Meridian x Apex Logistics — Enterprise MSA Redlines",
+      "participantName": "Jordan Alvarez",
+      "participantEmail": "jalvarez@apexlogistics.com",
+      "participantOrg": "Apex Logistics",
+      "category": "Legal & Finance",
+      "priority": "Urgent",
+      "responsibility": "needs_client_decision",
+      "responsibilityReason": "Legal MSA redlines and $210k spend exceed delegation limits, requiring Elena's approval.",
+      "aiSummary": "Jordan Alvarez sent two redlines to the $210k Enterprise MSA—raising the indemnification cap and extending payment terms—and asks for confirmation by Tuesday to countersign before Thanksgiving. The assistant must forward the decision to Elena for approval.",
+      "extractedActionItems": [
+        "Approve or reject increasing indemnification cap to 2x annual fees",
+        "Approve or reject changing payment terms from Net-30 to Net-45",
+        "Provide Elena's acceptance response by Tuesday to enable countersignature"
+      ],
+      "messages": [
+        {
+          "id": "m-acme-1",
+          "senderName": "Jordan Alvarez",
+          "senderEmail": "jalvarez@apexlogistics.com",
+          "senderRole": "external",
+          "timestamp": "2026-11-14T21:10:00.000Z",
+          "body": "Hi Elena,\n\nOur General Counsel completed review of the $210k Enterprise MSA. We are aligned on pricing and SLA, with two remaining items: (1) increasing the mutual indemnification cap from 1x to 2x annual fees, and (2) moving Net-30 to Net-45 payment terms.\n\nIf you can confirm acceptance by Tuesday, we can countersign before Thanksgiving."
+        }
+      ],
+      "internalNotes": [],
+      "draftReply": "",
+      "draftTone": "Warm & Diplomatic",
+      "lastUpdatedAt": "2026-11-15T12:20:59.380Z",
+      "unread": false
+    },
+    {
+      "id": "thread-snowflake-renewal",
+      "subject": "Urgent: Data Warehouse Enterprise Renewal (+18% Uplift)",
+      "participantName": "Hannah Brooks",
+      "participantEmail": "hbrooks@cloudscale.io",
+      "participantOrg": "CloudScale Data",
+      "category": "Legal & Finance",
+      "priority": "Urgent",
+      "responsibility": "needs_client_decision",
+      "responsibilityReason": "Spend $142k exceeds the $5k delegation limit and requires Elena's approval per the escalation rule.",
+      "aiSummary": "Hannah Brooks proposes a 2‑year renewal at the current $120k rate (vs $142k/yr new rate) with extra storage, and the assistant outlined two options: a 1‑year renewal with a max +4% increase or the 2‑year flat rate. Elena must decide which path to take before the Nov 22 deadline.",
+      "extractedActionItems": [
+        "Choose between a 1‑year renewal with ≤4% price increase or a 2‑year flat $120k rate",
+        "Confirm acceptance or counter‑offer to Hannah by Nov 22",
+        "If approved, have Marcus draft and send the final response"
+      ],
+      "messages": [
+        {
+          "id": "m-cs-1",
+          "senderName": "Hannah Brooks",
+          "senderEmail": "hbrooks@cloudscale.io",
+          "senderRole": "external",
+          "timestamp": "2026-11-14T15:00:00.000Z",
+          "body": "Hi Elena,\n\nAhead of your Dec 1 renewal date, our updated 2027 enterprise rate card puts your current compute tier at $142,000/yr (+18%). If we execute a 2-year agreement by Nov 22, I can hold your current $120,000/yr rate and include 15TB additional cold storage.\n\nPlease let me know how you’d like to proceed."
+        }
+      ],
+      "internalNotes": [
+        {
+          "id": "n-cs-1",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-14T15:40:00.000Z",
+          "content": "Flagging for your decision since this is $142k (> $5k limit). I checked with Sam (VP Eng)—he says switching warehouses isn’t realistic in Q4, so we have two good plays: (1) Counter with a 1-year renewal at +4% max, or (2) Take the 2-year flat rate at $120k. Which direction should I draft?"
+        }
+      ],
+      "draftReply": "",
+      "draftTone": "Executive Crisp",
+      "lastUpdatedAt": "2026-11-15T12:20:49.194Z",
+      "unread": false
+    },
+    {
+      "id": "thread-advisory-note",
+      "subject": "Q3 Advisory Retainer Wire Confirmation — Dr. Aris Thorne",
+      "participantName": "Dr. Aris Thorne",
+      "participantEmail": "aris@thorneadvisory.org",
+      "participantOrg": "Thorne Security Advisory",
+      "category": "Legal & Finance",
+      "priority": "Normal",
+      "responsibility": "resolved",
+      "responsibilityReason": "Assistant confirmed the $2,200 invoice and scheduled the Dec 9 sync within delegation limits, no client action needed.",
+      "aiSummary": "Dr. Aris Thorne inquired about the Q3 advisory invoice and a follow‑up meeting; Marcus confirmed the ACH payment cleared and booked a Dec 9, 11:00 AM PT call. All actions are completed per the client’s charter.",
+      "extractedActionItems": [
+        "Invoice #1042 payment of $2,200 confirmed",
+        "Meeting scheduled for Dec 9, 2026 at 11:00 AM PT (calendar invite sent)"
+      ],
+      "messages": [
+        {
+          "id": "m-adv-1",
+          "senderName": "Dr. Aris Thorne",
+          "senderEmail": "aris@thorneadvisory.org",
+          "senderRole": "external",
+          "timestamp": "2026-11-13T14:00:00.000Z",
+          "body": "Hi Marcus, checking in on whether Q3 advisory invoice #1042 ($2,200) cleared AP, and happy to lock our next brief sync in early December."
+        },
+        {
+          "id": "m-adv-2",
+          "senderName": "Marcus Chen (on behalf of Elena Vance)",
+          "senderEmail": "marcus@meridianhq.com",
+          "senderRole": "assistant",
+          "timestamp": "2026-11-13T16:12:00.000Z",
+          "body": "Hi Aris,\n\nAP confirmed ACH batch #8821 cleared yesterday for $2,200. I also sent over a calendar invite for Dec 9 at 11:00 AM PT with Elena.\n\nBest,\nMarcus Chen"
+        }
+      ],
+      "internalNotes": [
+        {
+          "id": "n-adv-1",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-13T16:13:00.000Z",
+          "content": "Verified AP wire and confirmed Dec 9 sync within charter limits."
+        }
+      ],
+      "draftReply": "",
+      "draftTone": "Executive Crisp",
+      "lastUpdatedAt": "2026-11-15T12:20:34.878Z",
+      "unread": false
+    },
+    {
+      "id": "thread-sequoia-dinner",
+      "subject": "Q4 Board Prep & Pre-Board Dinner Timing (Nov 19)",
+      "participantName": "David Park",
+      "participantEmail": "dpark@northstarventures.com",
+      "participantOrg": "Northstar Ventures",
+      "category": "Board & Investors",
+      "priority": "Urgent",
+      "responsibility": "ready_for_client_approval",
+      "responsibilityReason": "Board investor dinner confirmation requires Elena’s final sign-off; Marcus has already verified calendar availability and drafted the reply.",
+      "aiSummary": "David Park (Lead Investor) requested moving the Nov 19 pre-board dinner from 7:00 PM to 6:30 PM at Alderwood and asked whether Elena prefers bringing CFO Priya Nair for the ARR deep-dive.",
+      "extractedActionItems": [
+        "Confirm 6:30 PM time change on Nov 19 at Alderwood",
+        "Decide whether CFO Priya Nair joins the dinner or joins formal Board session only",
+        "Share pre-read deck 48 hours ahead (by Nov 17)"
+      ],
+      "messages": [
+        {
+          "id": "m-seq-1",
+          "senderName": "David Park",
+          "senderEmail": "dpark@northstarventures.com",
+          "senderRole": "external",
+          "timestamp": "2026-11-14T16:10:00.000Z",
+          "body": "Hi Elena,\n\nLooking forward to next Wednesday’s board meeting. Would 7:00 PM at Alderwood still work for our pre-board dinner, or should we lock a private room?"
+        },
+        {
+          "id": "m-seq-2",
+          "senderName": "Marcus Chen (on behalf of Elena Vance)",
+          "senderEmail": "marcus@meridianhq.com",
+          "senderRole": "assistant",
+          "timestamp": "2026-11-14T17:45:00.000Z",
+          "body": "Hi David,\n\nMarcus here from Elena’s office. We reserved the private alcove at Alderwood under Vance for Nov 19. Let us know if you need any dietary accommodations."
+        },
+        {
+          "id": "m-seq-3",
+          "senderName": "David Park",
+          "senderEmail": "dpark@northstarventures.com",
+          "senderRole": "external",
+          "timestamp": "2026-11-14T20:15:00.000Z",
+          "body": "Thanks Marcus! My flight out of SFO moved slightly earlier—could we shift dinner up 30 minutes to 6:30 PM? Also Elena, let me know if you want Priya to join us for the Q4 ARR bridge discussion or keep dinner 1:1."
+        }
+      ],
+      "internalNotes": [
+        {
+          "id": "n-seq-1",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-14T20:28:00.000Z",
+          "content": "Elena — Your 5:30 PM product review ends at 6:00 PM, so 6:30 PM at Alderwood (12 min drive) works cleanly. I drafted a reply confirming 6:30 PM and keeping dinner 1:1 with Priya joining the formal Board session next morning. Approve to send or edit below."
+        }
+      ],
+      "draftReply": "Hi David,\n\n6:30 PM at Alderwood works well—I’ve updated our reservation. Let’s keep dinner 1:1 so we can focus on 2027 strategic priorities, and Priya will walk through the full Q4 ARR bridge during the formal board session on Thursday morning. We’ll send the pre-read deck over by Monday afternoon.\n\nBest,\nElena",
+      "draftTone": "Executive Crisp",
+      "lastUpdatedAt": "2026-11-15T07:39:39.851Z",
+      "unread": false
+    },
+    {
+      "id": "thread-singapore-travel",
+      "subject": "FinTech Summit Singapore: Speaker Logistics & Hotel Confirmation",
+      "participantName": "Mei Lin Tan",
+      "participantEmail": "meilin@apacfintech.org",
+      "participantOrg": "APAC FinTech Summit",
+      "category": "Scheduling & Travel",
+      "priority": "Normal",
+      "responsibility": "assistant_handle",
+      "responsibilityReason": "Keynote logistics, AV check slot, and hotel block ($1,480 total) fall cleanly inside Marcus’s $2,500 travel delegation charter.",
+      "aiSummary": "Conference organizers need Elena’s flight arrival time for airport transfer, speaker bio confirmation, and 15-minute AV soundcheck slot selection on Dec 3.",
+      "extractedActionItems": [
+        "Provide SQ31 arrival details (Dec 2, 18:20 SGT)",
+        "Book 4:00 PM SGT AV rehearsal slot on Dec 3",
+        "Confirm Fullerton Bay hotel confirmation #FB-88412"
+      ],
+      "messages": [
+        {
+          "id": "m-sg-1",
+          "senderName": "Mei Lin Tan",
+          "senderEmail": "meilin@apacfintech.org",
+          "senderRole": "external",
+          "timestamp": "2026-11-14T12:05:00.000Z",
+          "body": "Dear Marcus & Elena,\n\nWe are excited to host Elena’s keynote on Dec 4 at 9:30 AM. Could your office share her Singapore arrival flight for VIP pickup, and pick either 2:30 PM or 4:00 PM SGT on Dec 3 for the stage AV check?"
+        }
+      ],
+      "internalNotes": [
+        {
+          "id": "n-sg-1",
+          "authorRole": "assistant",
+          "authorName": "Marcus Chen",
+          "timestamp": "2026-11-14T12:30:00.000Z",
+          "content": "Within travel charter ($1,480 hotel already confirmed). I’ll reply directly with SQ31 arrival and lock the 4:00 PM Dec 3 AV slot so Elena has morning open for Asia customer calls."
+        }
+      ],
+      "draftReply": "Hi Mei Lin,\n\nElena arrives on Singapore Airlines SQ31 on Dec 2 at 18:20 SGT (hotel confirmation #FB-88412 at Fullerton Bay). Please lock the 4:00 PM SGT AV check on Dec 3—we’ll also attach her updated headshot and 60-word bio here.\n\nBest regards,\nMarcus Chen\nOffice of Elena Vance",
+      "draftTone": "Schedule Coordination",
+      "lastUpdatedAt": "2026-11-14T12:30:00.000Z",
+      "unread": false
+    }
+  ]
+}

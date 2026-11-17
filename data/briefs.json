@@ -1,0 +1,204 @@
+[
+  {
+    "id": "brief-postgres-read-replicas",
+    "title": "Regional Read Replicas vs. Edge Caching for Analytics",
+    "question": "Should we deploy cross-region PostgreSQL read replicas or add a Redis edge cache layer to cut p95 dashboard latency below 180ms?",
+    "lens": "Technical Architecture",
+    "executiveSummary": "Current telemetry indicates that 78% of p95 latency (640ms) originates from repeated analytical aggregation queries rather than network round-trips across regions. Deploying a structured cache-aside layer with short TTLs and materialized rollups addresses the root bottleneck at roughly one-third the monthly infrastructure cost of cross-region read replicas.",
+    "recommendation": "Implement incremental materialized rollups paired with regional Redis edge caching for the top 12 dashboard queries in Phase 1, and defer cross-region PostgreSQL read replicas until write throughput or strict zero-staleness compliance requires them.",
+    "findings": [
+      {
+        "id": "f-1",
+        "title": "Aggregation Scans Dominate Query Time",
+        "category": "Performance Telemetry",
+        "confidence": "High",
+        "summary": "Slow query logs show 90-day tenant rollups scanning 14M+ rows repeatedly during morning login spikes, accounting for 490ms of the 640ms p95 budget.",
+        "evidence": "Production pg_stat_statements snapshot across 48 hours of peak traffic."
+      },
+      {
+        "id": "f-2",
+        "title": "Cross-Region Replication Adds Write & Cost Overhead",
+        "category": "Infrastructure Cost",
+        "confidence": "High",
+        "summary": "Running two additional db.r6g.xlarge read replicas across EU and APAC adds ~$1,840/month before cross-region WAL transfer fees.",
+        "evidence": "Q3 cloud billing estimates and WAL generation baseline (42 GB/day)."
+      },
+      {
+        "id": "f-3",
+        "title": "Dashboard SLA Permits 30-Second Freshness Window",
+        "category": "Product Requirements",
+        "confidence": "Moderate",
+        "summary": "Product stakeholders confirmed executive KPI cards only need near-real-time updates, whereas billing exports require primary DB consistency.",
+        "evidence": "Engineering & Product sync notes from Nov 10 architecture review."
+      },
+      {
+        "id": "f-4",
+        "title": "Stale Cache Invalidation Needs Tenant Scoping",
+        "category": "Security & Isolation",
+        "confidence": "High",
+        "summary": "Shared cache keys without explicit workspace IDs and permission hashes risk cross-tenant data leakage during role updates.",
+        "evidence": "Security checklist item SEC-19 from internal platform audit."
+      }
+    ],
+    "risks": [
+      {
+        "id": "r-1",
+        "risk": "Thundering herd on cache expiration during 09:00 UTC spikes",
+        "impact": "High",
+        "likelihood": "Medium",
+        "mitigation": "Use stale-while-revalidate (SWR) locking with jittered TTLs (+/- 15%) on rollup keys."
+      },
+      {
+        "id": "r-2",
+        "risk": "Drift between cached dashboard totals and CSV export totals",
+        "impact": "Medium",
+        "likelihood": "High",
+        "mitigation": "Route all CSV/audit exports directly to the primary replica and display last-refreshed timestamps on dashboard cards."
+      },
+      {
+        "id": "r-3",
+        "risk": "Redis memory eviction under sudden tenant onboarding surge",
+        "impact": "Medium",
+        "likelihood": "Low",
+        "mitigation": "Configure allkeys-lru eviction policy and cap per-tenant cached payload size at 256 KB."
+      }
+    ],
+    "actions": [
+      {
+        "id": "a-1",
+        "task": "Create incremental hourly rollup tables for top 12 analytics widgets",
+        "owner": "Backend Platform",
+        "timeframe": "Week 1",
+        "effortHours": 16,
+        "completed": true
+      },
+      {
+        "id": "a-2",
+        "task": "Implement tenant-scoped Redis cache wrapper with SWR jitter",
+        "owner": "Core API Team",
+        "timeframe": "Week 2",
+        "effortHours": 12,
+        "completed": false
+      },
+      {
+        "id": "a-3",
+        "task": "Add explicit Last Updated timestamp to executive dashboard header",
+        "owner": "Frontend Studio",
+        "timeframe": "Week 2",
+        "effortHours": 4,
+        "completed": false
+      },
+      {
+        "id": "a-4",
+        "task": "Run k6 load test simulating 5x morning login spike in staging",
+        "owner": "Reliability Eng",
+        "timeframe": "Week 3",
+        "effortHours": 8,
+        "completed": false
+      }
+    ],
+    "sources": [],
+    "rawNotes": "Architecture sync notes:\n- Current p95 dashboard load: 640ms (target <180ms).\n- pg_stat_statements: 78% of time is spent in 90-day tenant rollup aggregations scanning ~14M rows.\n- WAL volume is 42 GB/day. Two cross-region replicas (EU + APAC) estimated at ~$1,840/mo + egress.\n- Product confirmed 30s staleness is fine for charts, NOT fine for billing/audit CSV exports.\n- Security requires strict tenant_id + role_version in any cache key.",
+    "referencedUrls": [],
+    "usedWebSearch": false,
+    "thread": [
+      {
+        "id": "t-1",
+        "role": "user",
+        "content": "What happens if a workspace admin revokes a user permission while a cached response is still warm?",
+        "createdAt": "2026-11-12T10:15:00.000Z"
+      },
+      {
+        "id": "t-2",
+        "role": "assistant",
+        "content": "Because authorization checks happen at the API gateway before reading from the cache, a revoked user is rejected before any cached payload is returned. Including `role_version` in the cache key (as noted in Finding 4) provides defense-in-depth so even permission-scoped sub-queries cannot serve prior-role aggregations.",
+        "createdAt": "2026-11-12T10:15:08.000Z"
+      }
+    ],
+    "createdAt": "2026-11-12T09:40:00.000Z",
+    "updatedAt": "2026-11-12T10:15:08.000Z"
+  },
+  {
+    "id": "brief-eu-ai-act-enterprise-rollout",
+    "title": "Q1 Enterprise AI Assistant Governance & Audit Readiness",
+    "question": "What technical controls and vendor policies must be finalized before rolling out customer-facing document summarization to regulated EU enterprise accounts?",
+    "lens": "Market & Risk",
+    "executiveSummary": "Regulated EU enterprise procurement teams increasingly require verifiable zero-data-retention guarantees, explicit human-in-the-loop review boundaries for high-stakes outputs, and exportable prompt/response audit trails before signing annual contracts. Closing these three compliance gaps unblocks four late-stage enterprise pilots without delaying the core Q1 product launch.",
+    "recommendation": "Ship workspace-level Zero Data Retention (ZDR) routing, immutable audit logs for generated summaries, and clear source-citation links on every extracted claim prior to the Q1 enterprise pilot cohort.",
+    "findings": [
+      {
+        "id": "f-201",
+        "title": "Zero Data Retention Is a Procurement Blocker",
+        "category": "Compliance & Legal",
+        "confidence": "High",
+        "summary": "Three of four EU financial services prospects listed zero model-training retention and EU regional processing endpoints as mandatory InfoSec sign-off criteria.",
+        "evidence": "Enterprise security questionnaires from Q4 pipeline reviews."
+      },
+      {
+        "id": "f-202",
+        "title": "Citation Grounding Cuts Manual Review Time by Half",
+        "category": "User Workflow",
+        "confidence": "Moderate",
+        "summary": "Beta testers spent significantly less time verifying AI summaries when each bullet linked directly to the underlying paragraph or uploaded document page.",
+        "evidence": "Internal pilot feedback across 18 compliance analysts."
+      },
+      {
+        "id": "f-203",
+        "title": "Automated Decisions Require Explicit Disclaimers",
+        "category": "Policy & UX",
+        "confidence": "High",
+        "summary": "Advisory summaries must clearly separate extracted facts from model-inferred recommendations so analysts retain documented decision accountability.",
+        "evidence": "Legal counsel memo on enterprise AI transparency labeling."
+      }
+    ],
+    "risks": [
+      {
+        "id": "r-201",
+        "risk": "PII inadvertently logged in standard application error traces",
+        "impact": "Critical",
+        "likelihood": "Medium",
+        "mitigation": "Scrub prompt/document payloads from structured exception loggers and route audit metadata through encrypted EU storage."
+      },
+      {
+        "id": "r-202",
+        "risk": "Sales team commits to custom on-prem deployment timelines",
+        "impact": "High",
+        "likelihood": "Medium",
+        "mitigation": "Publish a standardized VPC/EU-resident cloud architecture brief for account executives."
+      }
+    ],
+    "actions": [
+      {
+        "id": "a-201",
+        "task": "Enable PII redaction filter on server-side error telemetry",
+        "owner": "Security Eng",
+        "timeframe": "Week 1",
+        "effortHours": 10,
+        "completed": true
+      },
+      {
+        "id": "a-202",
+        "task": "Add source-paragraph citation markers to summary output schema",
+        "owner": "AI Platform",
+        "timeframe": "Week 2",
+        "effortHours": 14,
+        "completed": true
+      },
+      {
+        "id": "a-203",
+        "task": "Finalize EU-resident cloud security whitepaper for InfoSec buyers",
+        "owner": "Solutions Arch",
+        "timeframe": "Week 3",
+        "effortHours": 8,
+        "completed": false
+      }
+    ],
+    "sources": [],
+    "rawNotes": "Q4 Enterprise Pipeline Retrospective:\n- 4 EU financial accounts stalled in InfoSec review.\n- Top requirements: Zero Data Retention (ZDR), EU regional inference endpoints, no PII in server crash logs, and verifiable citations so analysts can audit outputs quickly.\n- Legal requires explicit separation between extracted evidence and advisory recommendations.",
+    "referencedUrls": [],
+    "usedWebSearch": false,
+    "thread": [],
+    "createdAt": "2026-11-10T14:20:00.000Z",
+    "updatedAt": "2026-11-10T14:20:00.000Z"
+  }
+]

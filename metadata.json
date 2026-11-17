@@ -1,0 +1,6 @@
+{
+  "name": "Meridian Brief",
+  "description": "AI-powered research synthesis and structured decision brief workspace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
